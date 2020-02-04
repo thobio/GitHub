@@ -41,4 +41,11 @@ class FollowersViewController: UIViewController,UICollectionViewDelegate,UIColle
         cell.lblName.text = jsonDatas[indexPath.row]["login"].string
         return cell
     }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let userName = jsonDatas[indexPath.row]["login"].string
+        print(userName)
+        let vc = storyboard?.instantiateViewController(withIdentifier: "details") as! DetailsViewController
+        vc.nameString = userName!
+        self.present(vc, animated: true, completion: nil)
+    }
 }

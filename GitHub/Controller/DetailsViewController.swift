@@ -35,11 +35,11 @@ class DetailsViewController: UIViewController {
     let networkCall = NetworkCall()
     var jsonDatas = JSON()
     let alertView = AlertsView()
-    
+    var nameString :String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         uiSetup()
-        networkCall.getUser(name: "thobio") { (jsonData,isThereError) in
+        networkCall.getUser(name: nameString) { (jsonData,isThereError) in
             if isThereError.isEmpty {
                 self.jsonDatas = jsonData!
                 self.stringFillUI()
@@ -51,9 +51,9 @@ class DetailsViewController: UIViewController {
     func stringFillUI() {
         imageIcon.kf.setImage(with: URL(string: jsonDatas["avatar_url"].string!))
         lblName.text = jsonDatas["name"].string!
-        lblCompnayName.text = jsonDatas["company"].string!
-        lblLocation.text = jsonDatas["location"].string!
-        lblBio.text = jsonDatas["bio"].string!
+        lblCompnayName.text = jsonDatas["company"].string ?? ""
+        lblLocation.text = jsonDatas["location"].string ?? ""
+        lblBio.text = jsonDatas["bio"].string ?? ""
         lblPublicCount.text = "\(jsonDatas["public_repos"].int!)"
         lblPrivateCount.text = "\(jsonDatas["public_gists"].int!)"
         lblFolowerCount.text = "\(jsonDatas["following"].int!)"
@@ -63,6 +63,8 @@ class DetailsViewController: UIViewController {
     func uiSetup(){
         viewOne.viewStyles()
         viewTwo.viewStyles()
+        btnGitHubPage.buttonStyleRounded()
+        btnGetFollower.buttonStyleRounded()
     }
     
     @IBAction func dismissButtonAction(_ sender: UIBarButtonItem) {
