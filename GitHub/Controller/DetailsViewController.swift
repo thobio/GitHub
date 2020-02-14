@@ -49,15 +49,17 @@ class DetailsViewController: UIViewController {
         }
     }
     func stringFillUI() {
-        imageIcon.kf.setImage(with: URL(string: jsonDatas["avatar_url"].string!))
-        lblName.text = jsonDatas["name"].string!
+        print(jsonDatas)
+        imageIcon.kf.setImage(with: URL(string: jsonDatas["avatar_url"].string ?? ""))
+        lblName.text = jsonDatas["name"].string ?? ""
         lblCompnayName.text = jsonDatas["company"].string ?? ""
         lblLocation.text = jsonDatas["location"].string ?? ""
         lblBio.text = jsonDatas["bio"].string ?? ""
-        lblPublicCount.text = "\(jsonDatas["public_repos"].int!)"
-        lblPrivateCount.text = "\(jsonDatas["public_gists"].int!)"
-        lblFolowerCount.text = "\(jsonDatas["following"].int!)"
-        lblFollowingCount.text = "\(jsonDatas["followers"].int!)"
+        lblPublicCount.text = "\(jsonDatas["public_repos"].int ?? 0)"
+        lblPrivateCount.text = "\(jsonDatas["public_gists"].int ?? 0)"
+        lblFolowerCount.text = "\(jsonDatas["following"].int ?? 0)"
+        lblFollowingCount.text = "\(jsonDatas["followers"].int ?? 0)"
+        githubDate.text = "GitHub since \(dateFromStringJsonString(date: jsonDatas["created_at"].string ?? ""))"
     }
     
     func uiSetup(){
@@ -65,10 +67,27 @@ class DetailsViewController: UIViewController {
         viewTwo.viewStyles()
         btnGitHubPage.buttonStyleRounded()
         btnGetFollower.buttonStyleRounded()
+        navigationItem.rightBarButtonItem?.tintColor = .black
     }
     
+    @IBAction func buttonAction(_ sender: UIButton) {
+        if sender == btnGitHubPage {
+            let vc = GitHubPageViewController()
+            vc.githubPageUrl = jsonDatas["html_url"].string!
+            self.present(vc, animated: true, completion: nil)
+        }else{
+            
+        }
+    }
     @IBAction func dismissButtonAction(_ sender: UIBarButtonItem) {
         self.dismiss(animated: true, completion: nil)
     }
-    
+    func dateFromStringJsonString(date:String) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        let data = dateFormatter.date(from: date)
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MMM yyyy"
+        return formatter.string(from: data!)
+    }
 }

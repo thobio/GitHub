@@ -21,9 +21,16 @@
 		024FBC2123E3137400F3967C /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 024FBC2023E3137400F3967C /* SwiftyJSON */; };
 		024FBC2423E3192C00F3967C /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 024FBC2323E3192C00F3967C /* Kingfisher */; };
 		024FBC2623E3192C00F3967C /* KingfisherSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 024FBC2523E3192C00F3967C /* KingfisherSwiftUI */; };
+		02527BA023EAB1FB0066A028 /* Follower.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02527B9F23EAB1FB0066A028 /* Follower.swift */; };
+		0252A13223EBD4130018A580 /* GitHubPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0252A13123EBD4130018A580 /* GitHubPageViewController.swift */; };
+		0252A13A23EC63130018A580 /* ProfileCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0252A13923EC63130018A580 /* ProfileCollectionViewController.swift */; };
+		0252A13C23EC63E10018A580 /* ProfileHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0252A13B23EC63E10018A580 /* ProfileHeader.swift */; };
+		025657B523F12C86009CB921 /* RepoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025657B423F12C86009CB921 /* RepoCollectionViewCell.swift */; };
+		026589BD23F674B4008C36A3 /* Repo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026589BC23F674B4008C36A3 /* Repo.swift */; };
 		026AC64823E8569D001B4F86 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026AC64723E8569D001B4F86 /* Alerts.swift */; };
 		026AC64A23E85AEC001B4F86 /* FollowersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026AC64923E85AEC001B4F86 /* FollowersViewController.swift */; };
 		026AC64C23E86943001B4F86 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026AC64B23E86943001B4F86 /* DetailsViewController.swift */; };
+		02FE6B6B23EDA4C100F6B0AB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FE6B6A23EDA4C100F6B0AB /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,9 +46,16 @@
 		024FBC1623E2D8DD00F3967C /* FollowingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowingCollectionViewCell.swift; sourceTree = "<group>"; };
 		024FBC1823E2DADD00F3967C /* FollowingCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowingCollectionViewController.swift; sourceTree = "<group>"; };
 		024FBC1D23E30DD600F3967C /* NetworkCall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkCall.swift; sourceTree = "<group>"; };
+		02527B9F23EAB1FB0066A028 /* Follower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Follower.swift; sourceTree = "<group>"; };
+		0252A13123EBD4130018A580 /* GitHubPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubPageViewController.swift; sourceTree = "<group>"; };
+		0252A13923EC63130018A580 /* ProfileCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCollectionViewController.swift; sourceTree = "<group>"; };
+		0252A13B23EC63E10018A580 /* ProfileHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeader.swift; sourceTree = "<group>"; };
+		025657B423F12C86009CB921 /* RepoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoCollectionViewCell.swift; sourceTree = "<group>"; };
+		026589BC23F674B4008C36A3 /* Repo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repo.swift; sourceTree = "<group>"; };
 		026AC64723E8569D001B4F86 /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
 		026AC64923E85AEC001B4F86 /* FollowersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersViewController.swift; sourceTree = "<group>"; };
 		026AC64B23E86943001B4F86 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		02FE6B6A23EDA4C100F6B0AB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +92,7 @@
 		024FBBFB23E2B74E00F3967C /* GitHub */ = {
 			isa = PBXGroup;
 			children = (
+				02527B9E23EAB1D60066A028 /* Model */,
 				024FBC1523E2D84300F3967C /* View */,
 				024FBC1423E2D82400F3967C /* Controller */,
 				024FBBFC23E2B74E00F3967C /* AppDelegate.swift */,
@@ -95,10 +110,12 @@
 		024FBC1423E2D82400F3967C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				0252A13923EC63130018A580 /* ProfileCollectionViewController.swift */,
 				026AC64B23E86943001B4F86 /* DetailsViewController.swift */,
 				024FBC0023E2B74E00F3967C /* ViewController.swift */,
 				024FBC1823E2DADD00F3967C /* FollowingCollectionViewController.swift */,
 				026AC64923E85AEC001B4F86 /* FollowersViewController.swift */,
+				0252A13123EBD4130018A580 /* GitHubPageViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -108,8 +125,20 @@
 			children = (
 				024FBC1623E2D8DD00F3967C /* FollowingCollectionViewCell.swift */,
 				026AC64723E8569D001B4F86 /* Alerts.swift */,
+				0252A13B23EC63E10018A580 /* ProfileHeader.swift */,
+				025657B423F12C86009CB921 /* RepoCollectionViewCell.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		02527B9E23EAB1D60066A028 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				02527B9F23EAB1FB0066A028 /* Follower.swift */,
+				02FE6B6A23EDA4C100F6B0AB /* User.swift */,
+				026589BC23F674B4008C36A3 /* Repo.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,14 +223,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0252A13223EBD4130018A580 /* GitHubPageViewController.swift in Sources */,
 				026AC64A23E85AEC001B4F86 /* FollowersViewController.swift in Sources */,
 				024FBC1E23E30DD600F3967C /* NetworkCall.swift in Sources */,
 				024FBC1723E2D8DD00F3967C /* FollowingCollectionViewCell.swift in Sources */,
+				025657B523F12C86009CB921 /* RepoCollectionViewCell.swift in Sources */,
 				026AC64823E8569D001B4F86 /* Alerts.swift in Sources */,
 				024FBC1123E2C80100F3967C /* Extentions.swift in Sources */,
+				0252A13A23EC63130018A580 /* ProfileCollectionViewController.swift in Sources */,
+				026589BD23F674B4008C36A3 /* Repo.swift in Sources */,
 				024FBC1923E2DADD00F3967C /* FollowingCollectionViewController.swift in Sources */,
+				02FE6B6B23EDA4C100F6B0AB /* User.swift in Sources */,
+				0252A13C23EC63E10018A580 /* ProfileHeader.swift in Sources */,
 				024FBC0123E2B74E00F3967C /* ViewController.swift in Sources */,
 				024FBBFD23E2B74E00F3967C /* AppDelegate.swift in Sources */,
+				02527BA023EAB1FB0066A028 /* Follower.swift in Sources */,
 				024FBBFF23E2B74E00F3967C /* SceneDelegate.swift in Sources */,
 				026AC64C23E86943001B4F86 /* DetailsViewController.swift in Sources */,
 			);
