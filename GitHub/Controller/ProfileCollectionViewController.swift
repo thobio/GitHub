@@ -71,7 +71,6 @@ class ProfileCollectionViewController: UICollectionViewController,UICollectionVi
         }
     }
     func getCellRepo(url:String?){
-        // https://api.github.com/users/thobio/repos
         guard let urls = url else {
             return
         }
